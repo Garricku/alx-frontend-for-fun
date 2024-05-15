@@ -1,0 +1,32 @@
+/* Set up the flex container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 200px;
+    width: 100%;
+}
+
+/* Define custom colors for each box */
+.box {
+    width: 50px; /* Initial width for all boxes */
+    height: 50px; /* Initial height for all boxes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Custom colors for each box */
+.box1 { background-color: #10c36c; font-size: 15px;}
+.box2 { background-color: #26a5c9; font-size: 28px;}
+.box3 { background-color: #4b4d70; font-size: 80px;}
+.box4 { background-color: #ae67a5; font-size: 28px;}
+.box5 { background-color: #dc8e10; font-size: 15px;}
+
+/* Increase the size of boxes from left to middle */
+.box1 { width: 80px; height: 60px; }
+.box2 { width: 110px; height: 80px; }
+.box3 { width: 220px; height: 140px;}
+.box4 { width: 110px; height: 80px; }
+.box5 { width: 80px; height: 60px; }
