@@ -22,8 +22,12 @@
     --color-grey: #a0a0a0;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
+    --color-red: #cd3e65;
+    --color-green: #08805b;
   
     --text-color: var(--color-black);
+    --valid-color: var(--color-green);
+    --error-color: var(--color-red);
   
     --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -501,3 +505,172 @@
     font-size: 10rem;
     z-index: -1;
   }
+
+/*** FORM ***/
+/* Comment section
+    ============================= */
+.post-comments {
+    width: 80%;
+    margin: 10rem 0 0 auto;
+    padding-left: 7rem;
+}
+
+.section-title .post-comments {
+    font-variant: small-caps;
+}
+
+/* Basic form
+    ============================= */
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: none;
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    position: relative;
+    width: 100%;
+    padding: 1.2rem;
+    line-height: 1;
+    border: .1rem solid var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: none;
+    outline: 0;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding-right: 3rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: .1rem solid var(--color-grey);
+    background-color: var(--color-light-grey);
+}
+
+::placeholder {
+    font-style: italic;
+    font-size: var(--font-size-small);
+}
+
+/* Form group
+    ============================= */
+.form-group {
+    padding: 1rem;
+    margin: 0;
+    background-color: var(--color-white);
+}
+
+.form-group:focus-within {
+    background-color: var(--color-light-grey);
+    transition: .3s;
+}
+
+/* Form field
+    ============================= */
+.form-field-container {
+    position: relative;
+}
+
+.form-field-icon {
+    font-style: normal;
+}
+
+/* Form help
+    ============================= */
+.form-group .form-help {
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: .019rem;
+    color: var(--color-dark-grey);
+    font-size: var(--font-size-small);
+    max-height: 0;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.form-group:focus-within .form-help {
+    max-height: 20rem;
+    margin: .4rem 0 0;
+}
+
+/* Form error handling
+    ============================= */
+    /* The following code is used to place the icon in the after pseudo element.
+    Because after and before are not possible in an input, we need to use a span that will
+    be positioned on the right of our input. */
+input:not(:placeholder-shown) ~ .form-field-icon::after {
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+}
+
+/* Because inputs are invalid by default, we need to be careful and show the icon when
+we are not in focus and when the input is not empty (placeholder-shown).
+Careful with this one because it is not supported everywhere. */
+input:required:invalid:not(:focus):not(:placeholder-shown) ~ .form-field-icon::after {
+  content: '✘';
+  color: var(--error-color);
+}
+
+input:required:valid ~ .form-field-icon::after {
+  content: '✔';
+  color: var(--valid-color);
+}
+
+/* We want to hide the helper text when we are not in focus.
+The tilde allows us to select a sibling element in CSS */
+input:required:valid ~ .form-help {
+  max-height: 0;
+}
+
+/* Showing a border in a different color is good but not enough.
+For accessibility purposes, we added an icon when the input is valid or invalid to have a
+visual distinction that is not only color based. */
+input:required:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border: 0.1rem solid var(--error-color);
+}
+
+input:required:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+  border: 0.1rem solid var(--valid-color);
+}
+
+/* Base section */
+/* ... existing base styles ... */
+/* After the hover state of the button */
+.button-primary {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.button-primary:hover {
+  color: var(--color-primary);
+  background: var(--color-white);
+}

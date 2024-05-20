@@ -22,8 +22,12 @@
     --color-grey: #a0a0a0;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
+    --color-red: #cd3e65;
+    --color-green: #08805b;
   
     --text-color: var(--color-black);
+    --valid-color: var(--color-green);
+    --error-color: var(--color-red);
   
     --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -501,3 +505,71 @@
     font-size: 10rem;
     z-index: -1;
   }
+/*** FORM ***/
+/* Comment section
+    ============================= */
+.post-comments {
+    width: 80%;
+    margin: 10rem 0 0 auto;
+    padding-left: 7rem;
+}
+
+.section-title .post-comments {
+    font-variant: small-caps;
+}
+
+/* Basic form
+    ============================= */
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: none;
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    position: relative;
+    width: 100%;
+    padding: 1.2rem;
+    line-height: 1;
+    border: .1rem solid var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: none;
+    outline: 0;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding-right: 3rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: .1rem solid var(--color-grey);
+    background-color: var(--color-light-grey);
+}
+
+::placeholder {
+    font-style: italic;
+    font-size: var(--font-size-small);
+}
