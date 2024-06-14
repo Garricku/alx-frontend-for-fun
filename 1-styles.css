@@ -1,0 +1,24 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set font family and background color for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Style the anchor (link) element */
+a {
+    text-decoration: none; /* Hide the underline by default */
+    color: #FF0000; /* Assuming this is the red color used */
+    transition: text-decoration 2s; /* Adjust time for 'slowly' as needed */
+}
+
+/* Show the underline when hovering over the link */
+a:hover {
+    text-decoration: underline;
+}

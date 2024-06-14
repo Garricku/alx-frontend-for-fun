@@ -1,0 +1,60 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set font family and background color for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Style the unordered list (ul) */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Style each list item (li) */
+li {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Define the background image for each icon */
+.icon {
+    background-image: url('0-sprite.png');
+    display: inline-block;
+    background-size: cover; /* Adjust as needed */
+}
+
+/* Position the icons within the sprite image */
+.i-html {
+    /* Define the background position for the HTML icon */
+    background-position: 0 0;
+}
+
+.i-css {
+    /* Define the background position for the CSS icon */
+    background-position: 0 -50px;
+}
+
+.i-js {
+    /* Define the background position for the JavaScript icon */
+    background-position: 0 -100px;
+}
+
+/* Make the columns stack on top of each other for smaller screens */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}

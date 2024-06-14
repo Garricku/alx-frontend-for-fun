@@ -1,0 +1,64 @@
+/* Base styles for body and other elements */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for the .toggle container */
+.toggle {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-cb {
+    display: none;
+}
+
+/* Styles for the .toggle-label (the switch) */
+.toggle-label {
+    cursor: pointer;
+    text-indent: -9999px; /* Hide text inside label */
+    width: 60px; /* Width of the toggle switch */
+    height: 30px; /* Height of the toggle switch */
+    background-color: #ccc; /* Default background color */
+    display: block;
+    border-radius: 15px; /* Rounded borders for an oval shape */
+    position: relative;
+}
+
+/* Styles for the .toggle-inner (text) */
+.toggle-inner {
+    position: absolute;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    left: 5px;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* Show the text when the checkbox is checked */
+.toggle-cb:checked + .toggle-label .toggle-inner::before {
+    content: "Yes";
+    padding-left: 30px;
+}
+
+/* Show the text when the checkbox is unchecked */
+.toggle-cb:not(:checked) + .toggle-label .toggle-inner::before {
+    content: "No";
+    padding-right: 30px;
+}
+
+/* Styles for the .toggle-switch (circle) */
+.toggle-switch {
+    position: absolute;
+    top: -4px; /* Positioning adjustment to align with the label's oval shape */
+    left: -4px;
+    width: 38px; /* Width of the circle switch */
+    height: 38px; /* Height of the circle switch */
+    background: #fff; /* Background color of the circle switch */
+    border-radius: 19px; /* Rounded borders to make it circular */
+    transition: 0.3s; /* Transition effect for smooth animation */
+}
