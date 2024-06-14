@@ -1,0 +1,14 @@
+/* responsive-fonts scss */
+
+$font-size-h1: 20px;
+$font-size-h1-small: 14px;
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: $font-size-h1-small;
+  }
+}

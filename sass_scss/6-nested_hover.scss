@@ -1,0 +1,9 @@
+/* scsss file */
+
+button {
+  color: #FF0000;
+
+  &:hover {
+    color: #00FF00; // Text color on hover
+  }
+}

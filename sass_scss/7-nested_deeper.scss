@@ -1,0 +1,13 @@
+/* my sccs */
+
+body {
+  font-size: 14px; // Font size for all body tags
+
+  h1 {
+    font-size: 16px; // Font size for h1 tags inside body
+  }
+
+  .smaller {
+    font-size: 12px; // Font size for h1 tags with class .smaller
+  }
+}

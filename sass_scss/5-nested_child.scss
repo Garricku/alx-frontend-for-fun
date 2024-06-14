@@ -1,0 +1,10 @@
+/* This is a comment for the entire block */
+body {
+  color: #3D3D3D;
+
+  .red {
+    color: #FF0000;
+    &:first-child {
+    }
+  }
+}

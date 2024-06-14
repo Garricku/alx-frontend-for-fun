@@ -1,0 +1,14 @@
+/* my scsss */
+
+@mixin set-margins($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+body {
+  @include set-margins(10px, 10px); // Apply margins to body
+}
+
+div {
+  @include set-margins(15px, 15px); // Apply margins to div
+}

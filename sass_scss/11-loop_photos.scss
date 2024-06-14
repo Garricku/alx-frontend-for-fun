@@ -1,0 +1,9 @@
+/* sccss */
+
+@import '11-photos.scss';
+
+@each $name in $list-names {
+  .bg-#{$name} {
+    background-image: url('#{$name}.png');
+  }
+}

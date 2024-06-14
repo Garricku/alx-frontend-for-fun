@@ -1,0 +1,23 @@
+/* my sccs */
+
+@mixin set-font-size($size) {
+  font-size: $size;
+}
+
+%info-style {
+  @include set-font-size(12px);
+}
+
+.info {
+  @extend %info-style;
+}
+
+.success {
+  @extend %info-style;
+  color: #00FF00;
+}
+
+.warning {
+  @extend %info-style;
+  color: #FF0000;
+}

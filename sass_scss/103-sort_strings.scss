@@ -1,0 +1,42 @@
+/* my scss */
+
+@import '103-sort_list.scss';
+@function compare($string-a, $string-b) {
+  $string-a: to-lower-case($string-a + unquote(""));
+  $string-b: to-lower-case($string-b + unquote(""));
+
+  @for $i from 1 through min(str-length($string-a), str-length($string-b)) {
+    $char-a: str-slice($string-a, $i, $i);
+    $char-b: str-slice($string-b, $i, $i);
+
+    @if $char-a and $char-b {
+      @if index($list_to_sort, $char-a) != index($list_to_sort, $char-b) {
+        @return index($list_to_sort, $char-a) < index($list_to_sort, $char-b);
+      }
+    }
+  }
+
+  @return str-length($string-a) < str-length($string-b);
+}
+
+@function bubble-sort($list) {
+  $length: length($list);
+
+  @for $i from 1 through $length {
+    @for $j from $i * -1 through -1 {
+      $j: abs($j);
+
+      @if $j > 1 and compare(nth($list, $j), nth($list, $j - 1)) {
+        $list: set-nth($list, $j, nth($list, $j - 1));
+      }
+    }
+  }
+
+  @return $list;
+}
+
+// Sort the list
+$sorted_list: bubble-sort($list_to_sort);
+
+// Print the sorted list
+@debug "Sorted list: #{$sorted_list}";
